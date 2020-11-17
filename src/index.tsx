@@ -6,6 +6,8 @@ import reportWebVitals from 'reportWebVitals';
 import App from 'App';
 import store from 'store';
 
+import 'bulma/css/bulma.min.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
