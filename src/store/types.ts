@@ -77,10 +77,13 @@ export type WeatherAction =
   | SetLoadingAction
   | SetErrorAction;
 
-export interface AlertAction {
+interface SetAlertAction {
   type: typeof SET_ALERT,
   payload: string;
 }
+
+export type AlertAction = 
+  | SetAlertAction;
 
 export interface AlertState {
   message: string;
