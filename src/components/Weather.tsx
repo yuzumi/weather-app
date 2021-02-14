@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 
 import { WeatherData } from 'store/weather/types';
+import { toFahrenheit, toCelsius } from 'utils';
 
 interface WeatherProps {
   data: WeatherData;
 }
 
 const Weather: FC<WeatherProps> = ({ data }) => {
-  const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
-  const celsius = (data.main.temp - 273.15).toFixed(2);
+  const fahrenheit = toFahrenheit(data.main.temp);
+  const celsius = toCelsius(data.main.temp);
 
   return (
     <section className="section">
