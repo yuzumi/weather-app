@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from 'store';
-import { setAlert } from 'store/actions/alertActions';
-import { setError } from 'store/actions/weatherActions';
+import { setAlert } from 'store/alert/actions';
+import { setError } from 'store/weather/actions';
 
 import Weather from 'components/Weather'
 import Search from 'components/Search';

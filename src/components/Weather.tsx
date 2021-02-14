@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { WeatherData } from 'store/types';
+import { WeatherData } from 'store/weather/types';
 
 interface WeatherProps {
   data: WeatherData;

@@ -1,8 +1,8 @@
 import React, { FC, FormEvent, useState,  } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { setAlert } from 'store/actions/alertActions';
-import { getWeather, setLoading } from 'store/actions/weatherActions';
+import { setAlert } from 'store/alert/actions';
+import { getWeather, setLoading } from 'store/weather/actions';
 
 interface SearchProps {
   title: string;

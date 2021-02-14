@@ -1,4 +1,4 @@
-import { AlertAction, SET_ALERT } from 'store/types'; 
+import { AlertAction, SET_ALERT } from 'store/alert/types'; 
 
 export const setAlert = (message: string): AlertAction => ({
   type: SET_ALERT,

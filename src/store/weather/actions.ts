@@ -1,7 +1,7 @@
 import { ThunkAction } from 'redux-thunk';
 
 import { RootState } from 'store';
-import { WeatherAction, WeatherData, WeatherError, GET_WEATHER, SET_ERROR, SET_LOADING } from 'store/types';
+import { WeatherAction, WeatherData, WeatherError, GET_WEATHER, SET_ERROR, SET_LOADING } from 'store/weather/types';
 
 export const getWeather = (city: string): ThunkAction<void, RootState, null, WeatherAction> => {
   return async dispatch => {
