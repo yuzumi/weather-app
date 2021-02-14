@@ -3,6 +3,8 @@ import React, { FC } from 'react';
 import { WeatherData } from 'store/weather/types';
 import { toFahrenheit, toCelsius } from 'utils';
 
+import WeatherIcon from 'components/WeatherIcon';
+
 interface WeatherProps {
   data: WeatherData;
 }
@@ -30,9 +32,9 @@ const Weather: FC<WeatherProps> = ({ data }) => {
                 {data.weather[0].description}
               </p>
               <p className="title">
-                <img 
-                  src={`https://api.openweathermap.org/img/wn/${data.weather[0].icon}.png`}
-                  alt=""
+                <WeatherIcon 
+                  icon={data.weather[0].icon} 
+                  description={data.weather[0].description}  
                 />
               </p>
             </div>
