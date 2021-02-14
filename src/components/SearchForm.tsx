@@ -1,16 +1,11 @@
 import React, { FC, FormEvent, useState,  } from 'react';
-import { useDispatch } from 'react-redux';
 
-import { setAlert } from 'store/alert/actions';
-import { getWeather, setLoading } from 'store/weather/actions';
-
-interface SearchProps {
+interface SearchFormProps {
   title: string;
+  onSubmit: (city: string) => void;
 }
 
-const Search: FC<SearchProps> = ({ title }) => {
-  const dispatch = useDispatch();
-
+const SearchForm: FC<SearchFormProps> = ({ title, onSubmit }) => {
   const [city, setCity] = useState('');
 
   const handleCityChange = (event: FormEvent<HTMLInputElement>) => {
@@ -20,13 +15,7 @@ const Search: FC<SearchProps> = ({ title }) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (city.trim() === '') {
-      return dispatch(setAlert('City is required'));
-    }
-
-    dispatch(setLoading());
-    dispatch(getWeather(city));
-
+    onSubmit(city);
     setCity('');
   };
 
@@ -66,4 +55,4 @@ const Search: FC<SearchProps> = ({ title }) => {
   );
 };
 
-export default Search;
+export default SearchForm;

@@ -8,8 +8,9 @@ import { selectMessage } from 'store/alert/selectors';
 
 import Weather from 'components/Weather'
 import Loader from 'components/Loader';
-import Search from 'components/Search';
 import Alert from 'components/Alert';
+
+import Search from 'containers/Search';
 
 import 'App.css';
 
