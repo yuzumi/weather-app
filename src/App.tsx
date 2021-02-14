@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setAlert } from 'store/alert/actions';
@@ -7,12 +7,13 @@ import { selectData } from 'store/weather/selectors';
 import { selectMessage } from 'store/alert/selectors';
 
 import Weather from 'components/Weather'
+import Loader from 'components/Loader';
 import Search from 'components/Search';
 import Alert from 'components/Alert';
 
 import 'App.css';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const dispatch = useDispatch();
 
   const { data: weatherData, loading, error } = useSelector(selectData);
@@ -24,7 +25,7 @@ const App: React.FC = () => {
       <Search title="Enter city name and press search button" />
 
       {loading ? (
-        <h2 className="is-size-3 py-2">Loading...</h2>
+        <Loader />
       ) : (
         weatherData?.main && <Weather data={weatherData} />
       )}
